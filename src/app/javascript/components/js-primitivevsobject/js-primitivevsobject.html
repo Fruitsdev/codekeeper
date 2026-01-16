@@ -1,0 +1,141 @@
+<section class="note-section">
+  <header class="note-header">
+    <h1 class="note-title">Primitive vs Object</h1>
+    <p class="note-subtitle">
+      Understand how primitive values and reference values behave in JavaScript.
+    </p>
+  </header>
+
+  <!-- Primitive Types -->
+  <div class="note-card">
+    <h2 class="note-heading">Primitive Types ✅</h2>
+
+    <ul class="note-list">
+      <li>Primitive values store the <strong>actual value</strong>.</li>
+      <li>Copied by <strong>value</strong>.</li>
+      <li>Immutable (value itself cannot be changed, only replaced).</li>
+    </ul>
+
+    <p class="note-text"><strong>Examples:</strong></p>
+    <ul class="note-list">
+      <li><code>Number</code></li>
+      <li><code>String</code></li>
+      <li><code>Boolean</code></li>
+      <li><code>Undefined</code></li>
+      <li><code>Null</code></li>
+      <li><code>BigInt</code></li>
+      <li><code>Symbol</code></li>
+    </ul>
+
+    <pre class="note-code"><code>let age = 24;
+let oldAge = age;
+
+age = 25;
+
+console.log(age);     // 25
+console.log(oldAge);  // 24 ✅ oldAge not affected</code></pre>
+  </div>
+
+  <!-- Reference Types -->
+  <div class="note-card">
+    <h2 class="note-heading">Reference Types (Objects) ✅</h2>
+
+    <ul class="note-list">
+      <li>Objects store a <strong>reference (address)</strong> in memory.</li>
+      <li>Copied by <strong>reference</strong> (not by value).</li>
+      <li>If you change one, the other also changes (same reference).</li>
+    </ul>
+
+    <pre class="note-code"><code>const me = &#123;
+  name: "Tom",
+  age: 24
+&#125;;
+
+const friend = me;
+
+friend.age = 25;
+
+console.log(me.age);      // 25 ✅ changed
+console.log(friend.age);  // 25</code></pre>
+  </div>
+
+  <!-- Stack vs Heap -->
+  <div class="note-card">
+    <h2 class="note-heading">Stack vs Heap (Concept)</h2>
+
+    <ul class="note-list">
+      <li><strong>Stack</strong> stores primitive values and references.</li>
+      <li><strong>Heap</strong> stores the actual object data.</li>
+      <li>
+        For objects, the variable points to the object in heap using a reference.
+      </li>
+    </ul>
+  </div>
+
+  <!-- Shallow Copy Fix -->
+  <div class="note-card">
+    <h2 class="note-heading">Fix: Copy an Object ✅ (Shallow Copy)</h2>
+
+    <p class="note-text">
+      If you want to copy an object without affecting the original object,
+      create a new object using spread operator or <code>Object.assign()</code>.
+    </p>
+
+    <pre class="note-code"><code>// Using spread operator
+const me = &#123;
+  name: "Tom",
+  age: 24
+&#125;;
+
+const copy = &#123; ...me &#125;;
+copy.age = 30;
+
+console.log(me.age);   // 24 ✅ not changed
+console.log(copy.age); // 30</code></pre>
+
+    <pre class="note-code"><code>// Using Object.assign()
+const me2 = &#123;
+  name: "Tom",
+  age: 24
+&#125;;
+
+const copy2 = Object.assign(&#123;&#125;, me2);
+copy2.name = "Sam";
+
+console.log(me2.name);   // Tom ✅
+console.log(copy2.name); // Sam</code></pre>
+  </div>
+
+  <!-- Nested Object problem -->
+  <div class="note-card">
+    <h2 class="note-heading">⚠️ Shallow Copy Limitation (Nested Objects)</h2>
+
+    <p class="note-text">
+      Spread / Object.assign creates only a <strong>shallow copy</strong>.
+      Nested objects/arrays still share the same reference.
+    </p>
+
+    <pre class="note-code"><code>const user = &#123;
+  name: "Tom",
+  skills: ["JS", "Angular"]
+&#125;;
+
+const userCopy = &#123; ...user &#125;;
+
+userCopy.skills.push("React");
+
+console.log(user.skills);     // ["JS","Angular","React"] ❌ affected
+console.log(userCopy.skills); // ["JS","Angular","React"]</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">✅ Summary</h2>
+
+    <ul class="note-list">
+      <li><strong>Primitive</strong> → copied by value ✅</li>
+      <li><strong>Object</strong> → copied by reference ✅</li>
+      <li><strong>Shallow Copy</strong> works only for top-level properties ✅</li>
+      <li><strong>Nested objects</strong> need deep copy methods ⚠️</li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,90 @@
+<section class="note-section">
+  <header class="note-header">
+    <h1 class="note-title">Conversion &amp; Coercion</h1>
+    <p class="note-subtitle">
+      Learn the difference between manual type conversion and automatic coercion
+      in JavaScript.
+    </p>
+  </header>
+
+  <div class="note-card">
+    <h2 class="note-heading">Type Conversion (Manual)</h2>
+
+    <ul class="note-list">
+      <li>
+        <strong>Conversion</strong> means we convert a value from one type to
+        another <strong>manually</strong>.
+      </li>
+      <li>
+        Common conversion functions: <code>Number()</code>,
+        <code>String()</code>, <code>Boolean()</code>
+      </li>
+    </ul>
+
+    <pre class="note-code"><code>// String to Number
+console.log(Number("10"));      // 10
+console.log(Number("Tom"));// NaN
+
+// Number to String
+console.log(String(25));        // "25"
+
+// Any value to Boolean
+console.log(Boolean(0));        // false
+console.log(Boolean(1));        // true
+console.log(Boolean(""));       // false
+console.log(Boolean("Hi"));     // true</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Type Coercion (Automatic)</h2>
+
+    <ul class="note-list">
+      <li>
+        <strong>Coercion</strong> means JavaScript automatically converts types
+        behind the scenes.
+      </li>
+      <li>Usually happens with operators like <code>+</code>, <code>-</code></li>
+    </ul>
+
+    <pre class="note-code"><code>// + converts to string if one operand is string
+console.log("10" + 5);   // "105"
+
+// - converts to number if possible
+console.log("10" - 5);   // 5
+
+console.log("10" * 2);   // 20
+console.log("10" / 2);   // 5</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Common Coercion Examples</h2>
+
+    <pre class="note-code"><code>console.log("5" + 1);     // "51"
+console.log("5" - 1);     // 4
+console.log("5" * "2");   // 10
+
+console.log(true + 1);    // 2  (true becomes 1)
+console.log(false + 1);   // 1  (false becomes 0)</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">NaN (Not a Number)</h2>
+
+    <p class="note-text">
+      <code>NaN</code> is a number type, but it represents an invalid numeric
+      result.
+    </p>
+
+    <pre class="note-code"><code>console.log(Number("abc")); // NaN
+console.log(typeof NaN);    // "number"</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Best Practice ✅</h2>
+
+    <ul class="note-list">
+      <li>Prefer explicit conversion instead of relying on coercion.</li>
+      <li>Use <code>===</code> for comparisons to avoid unexpected results.</li>
+    </ul>
+  </div>
+</section>

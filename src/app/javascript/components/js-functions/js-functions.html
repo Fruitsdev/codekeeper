@@ -1,0 +1,132 @@
+<section class="note-section">
+  <header class="note-header">
+    <h1 class="note-title">Functions</h1>
+    <p class="note-subtitle">
+      Functions are reusable blocks of code designed to perform a specific task.
+    </p>
+  </header>
+
+  <div class="note-card">
+    <h2 class="note-heading">What is a Function?</h2>
+
+    <ul class="note-list">
+      <li>A function allows you to reuse logic without writing it again and again.</li>
+      <li>You can pass values into a function using <strong>parameters</strong>.</li>
+      <li>The function can return an output using <code>return</code>.</li>
+    </ul>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">1) Function Declaration</h2>
+
+    <pre class="note-code"><code>function greet() &#123;
+  console.log("Hello Tom!");
+&#125;
+
+greet();</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">2) Function with Parameters</h2>
+
+    <pre class="note-code"><code>function add(a, b) &#123;
+  console.log(a + b);
+&#125;
+
+add(10, 5);</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">3) Function with Return</h2>
+
+    <pre class="note-code"><code>function multiply(x, y) &#123;
+  return x * y;
+&#125;
+
+let result = multiply(5, 4);
+console.log(result);</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">4) Function Expression</h2>
+
+    <p class="note-text">
+      Functions can also be stored in variables.
+    </p>
+
+    <pre class="note-code"><code>const sayHi = function () &#123;
+  console.log("Hi!");
+&#125;;
+
+sayHi();</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">5) Arrow Functions (ES6)</h2>
+
+    <p class="note-text">
+      Arrow functions are shorter syntax for writing functions.
+    </p>
+
+    <pre class="note-code"><code>// Normal function
+function subtract(a, b) &#123;
+  return a - b;
+&#125;
+
+// Arrow function
+const subtractArrow = (a, b) => &#123;
+  return a - b;
+&#125;;
+
+// One-liner arrow function
+const square = (n) => n * n;</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">6) Default Parameters</h2>
+
+    <pre class="note-code"><code>function welcome(name = "Guest") &#123;
+  console.log("Welcome " + name);
+&#125;
+
+welcome();       // Guest
+welcome("Sam");  // Sam</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">7) Rest Parameters</h2>
+
+    <p class="note-text">
+      Rest operator <code>...</code> collects multiple arguments into an array.
+    </p>
+
+    <pre class="note-code"><code>function sum(...numbers) &#123;
+  let total = 0;
+
+  for (let num of numbers) &#123;
+    total += num;
+  &#125;
+
+  return total;
+&#125;
+
+console.log(sum(1, 2, 3, 4));</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">8) Callback Function (Basic)</h2>
+
+    <p class="note-text">
+      A callback is a function passed into another function as an argument.
+    </p>
+
+    <pre class="note-code"><code>function greetUser(name, callback) &#123;
+  console.log("Hello " + name);
+  callback();
+&#125;
+
+greetUser("Tom", function () &#123;
+  console.log("Welcome to JavaScript!");
+&#125;);</code></pre>
+  </div>
+</section>

@@ -1,0 +1,79 @@
+<section class="note-section">
+  <header class="note-header">
+    <h1 class="note-title">this keyword</h1>
+    <p class="note-subtitle">
+      <code>this</code> depends on how a function is called.
+    </p>
+  </header>
+
+  <div class="note-card">
+    <h2 class="note-heading">Basics</h2>
+
+    <ul class="note-list">
+      <li>If we set <code>x = 5</code>, then <code>x</code> will always be <code>5</code>.</li>
+      <li>
+        But the <code>this</code> keyword depends on the way in which a function is called.
+      </li>
+    </ul>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">4 different ways functions can be called</h2>
+
+    <div class="note-subcard">
+      <h3 class="note-subheading">1) Method (Object)</h3>
+      <ul class="note-list">
+        <li>Calling a function attached to an object is called a <strong>method</strong>.</li>
+        <li>
+          When calling a method, <code>this</code> points to the <strong>object</strong>
+          on which the method is called.
+        </li>
+      </ul>
+
+      <pre class="note-code"><code>const jonas = &#123;
+  userName: "Jonas",
+  year: 1998,
+  calcAge: function () &#123;
+    return 2023 - this.year;
+  &#125;
+&#125;;
+
+jonas.calcAge();
+/*
+calcAge - Method
+this - jonas
+year - 1998
+*/</code></pre>
+    </div>
+
+    <div class="note-subcard">
+      <h3 class="note-subheading">2) Regular Function</h3>
+      <ul class="note-list">
+        <li><code>this</code> → <code>undefined</code> (in <strong>strict mode</strong>)</li>
+        <li>
+          In non-strict mode, <code>this</code> points to the <strong>global object</strong>
+          (in browser it is <code>window</code>).
+        </li>
+      </ul>
+    </div>
+
+    <div class="note-subcard">
+      <h3 class="note-subheading">3) Arrow Function</h3>
+      <ul class="note-list">
+        <li>Arrow functions do <strong>not</strong> get their own <code>this</code>.</li>
+        <li>They inherit <code>this</code> from the parent scope.</li>
+      </ul>
+    </div>
+
+    <div class="note-subcard">
+      <h3 class="note-subheading">4) Event Listener</h3>
+      <ul class="note-list">
+        <li>
+          When a function is called as an event listener,
+          <code>this</code> points to the <strong>DOM element</strong>
+          that the handler is attached to.
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

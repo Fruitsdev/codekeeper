@@ -1,0 +1,105 @@
+<section class="note-section">
+  <header class="note-header">
+    <h1 class="note-title">Conditional Statements</h1>
+    <p class="note-subtitle">
+      Conditional statements are used to make decisions based on conditions.
+    </p>
+  </header>
+
+  <div class="note-card">
+    <h2 class="note-heading">1) if Statement</h2>
+
+    <p class="note-text">
+      Executes a block of code only if the condition is <strong>true</strong>.
+    </p>
+
+    <pre class="note-code"><code>let age = 18;
+
+if (age >= 18) &#123;
+  console.log("You are eligible to vote");
+&#125;</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">2) if...else Statement</h2>
+
+    <p class="note-text">
+      Runs one block if condition is true, otherwise runs the <code>else</code>
+      block.
+    </p>
+
+    <pre class="note-code"><code>let marks = 35;
+
+if (marks >= 40) &#123;
+  console.log("Pass");
+&#125; else &#123;
+  console.log("Fail");
+&#125;</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">3) else if Ladder</h2>
+
+    <p class="note-text">
+      Used to test multiple conditions one by one.
+    </p>
+
+    <pre class="note-code"><code>let score = 75;
+
+if (score >= 90) &#123;
+  console.log("Grade A");
+&#125; else if (score >= 75) &#123;
+  console.log("Grade B");
+&#125; else if (score >= 50) &#123;
+  console.log("Grade C");
+&#125; else &#123;
+  console.log("Fail");
+&#125;</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">4) switch Statement</h2>
+
+    <p class="note-text">
+      Used when you want to compare one value with many cases.
+    </p>
+
+    <pre class="note-code"><code>let day = 3;
+
+switch (day) &#123;
+  case 1:
+    console.log("Monday");
+    break;
+  case 2:
+    console.log("Tuesday");
+    break;
+  case 3:
+    console.log("Wednesday");
+    break;
+  default:
+    console.log("Invalid day");
+&#125;</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">5) Truthy & Falsy Values</h2>
+
+    <p class="note-text">
+      In JavaScript, some values are treated as <strong>false</strong> even
+      though they are not the boolean <code>false</code>.
+    </p>
+
+    <ul class="note-list">
+      <li><strong>Falsy values:</strong> <code>false</code>, <code>0</code>, <code>""</code>, <code>null</code>, <code>undefined</code>, <code>NaN</code></li>
+      <li><strong>Truthy values:</strong> Everything else ✅</li>
+    </ul>
+
+    <pre class="note-code"><code>let userName = "";
+
+if (userName) &#123;
+  console.log("Username exists");
+&#125; else &#123;
+  console.log("Username is empty"); // ✅ runs
+&#125;</code></pre>
+  </div>
+</section>

@@ -1,0 +1,62 @@
+<section class="note-section">
+  <header class="note-header">
+    <h1 class="note-title">Template Literals</h1>
+    <p class="note-subtitle">
+      Template literals make string creation easier using backticks and
+      interpolation.
+    </p>
+  </header>
+
+  <div class="note-card">
+    <h2 class="note-heading">What are Template Literals?</h2>
+
+    <ul class="note-list">
+      <li>Template literals use backticks: <code>`...`</code></li>
+      <li>
+        They support variable interpolation using <code>$&#123;variable&#125;</code>
+      </li>
+      <li>They support multi-line strings easily ✅</li>
+    </ul>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">String Concatenation vs Template Literals</h2>
+
+    <pre class="note-code"><code>// Old way (concatenation)
+const firstName = "Tom";
+const job = "Developer";
+const year = 2026;
+
+const msg1 = "I'm " + firstName + ", a " + job + " in " + year;
+console.log(msg1);
+
+// Template literals (recommended)
+const msg2 = `I'm $&#123;firstName&#125;, a $&#123;job&#125; in $&#123;year&#125;`;
+console.log(msg2);</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Multi-line Strings</h2>
+
+    <pre class="note-code"><code>// Using template literals
+const multiLine = `Hello Tom,
+Welcome to JavaScript!
+Enjoy learning 😄`;
+
+console.log(multiLine);</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Expressions inside $&#123; &#125;</h2>
+
+    <p class="note-text">
+      You can write any valid expression inside <code>$&#123; &#125;</code>.
+    </p>
+
+    <pre class="note-code"><code>const a = 10;
+const b = 20;
+
+console.log(`Sum is $&#123;a + b&#125;`);         // 30
+console.log(`Is a greater? $&#123;a > b&#125;`);  // false</code></pre>
+  </div>
+</section>

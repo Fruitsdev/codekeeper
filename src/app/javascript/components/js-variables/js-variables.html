@@ -1,0 +1,63 @@
+<section class="note-section">
+  <header class="note-header">
+    <h1 class="note-title">Variable</h1>
+    <p class="note-subtitle">
+      Variables are containers used to store data values in JavaScript.
+    </p>
+  </header>
+
+  <div class="note-card">
+    <h2 class="note-heading">What is a Variable?</h2>
+    <ul class="note-list">
+      <li>A variable is like a container that holds a value.</li>
+      <li>The value can be changed later in the program.</li>
+      <li>Used to store numbers, strings, booleans, objects, arrays, etc.</li>
+    </ul>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Declaring Variables</h2>
+
+    <p class="note-text">
+      In JavaScript, variables can be declared using <code>var</code>,
+      <code>let</code>, and <code>const</code>.
+    </p>
+
+    <pre class="note-code"><code>// using var (old way)
+var name = "Tom";
+
+// using let (recommended)
+let age = 24;
+
+// using const (constant value)
+const country = "India";</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Rules for Naming Variables</h2>
+
+    <ul class="note-list">
+      <li>Must start with a letter, <code>_</code>, or <code>$</code></li>
+      <li>Cannot start with a number</li>
+      <li>Cannot use reserved keywords (example: <code>if</code>, <code>class</code>)</li>
+      <li>Use meaningful names (example: <code>userName</code>, <code>totalPrice</code>)</li>
+      <li>JavaScript is case-sensitive (<code>age</code> and <code>Age</code> are different)</li>
+    </ul>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Difference: var vs let vs const</h2>
+
+    <ul class="note-list">
+      <li><strong>var</strong>: function scoped, can be re-declared (avoid using)</li>
+      <li><strong>let</strong>: block scoped, can be re-assigned ✅</li>
+      <li><strong>const</strong>: block scoped, cannot be re-assigned ✅</li>
+    </ul>
+
+    <pre class="note-code"><code>let score = 10;
+score = 20; // ✅ allowed
+
+const pi = 3.14;
+// pi = 3.15; ❌ error</code></pre>
+  </div>
+</section>

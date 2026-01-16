@@ -1,0 +1,67 @@
+<section class="note-section">
+  <header class="note-header">
+    <h1 class="note-title">prompt()</h1>
+    <p class="note-subtitle">
+      <code>prompt()</code> is used to get input from the user through a popup box.
+    </p>
+  </header>
+
+  <div class="note-card">
+    <h2 class="note-heading">What is prompt()?</h2>
+
+    <ul class="note-list">
+      <li>
+        <code>prompt()</code> displays a dialog box with an input field.
+      </li>
+      <li>
+        It returns the user input as a <strong>string</strong>.
+      </li>
+      <li>
+        If user clicks <strong>Cancel</strong>, it returns <code>null</code>.
+      </li>
+    </ul>
+
+    <pre class="note-code"><code>const name = prompt("What is your name?");
+console.log(name);</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Example: Convert input to Number ✅</h2>
+
+    <p class="note-text">
+      Since prompt returns a string, we usually convert it using
+      <code>Number()</code>.
+    </p>
+
+    <pre class="note-code"><code>const ageInput = prompt("Enter your age:");
+const age = Number(ageInput);
+
+console.log(age);
+console.log(typeof age);</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Example: Simple Check</h2>
+
+    <pre class="note-code"><code>const favNumber = Number(prompt("Enter your favourite number:"));
+
+if (favNumber === 7) &#123;
+  console.log("🎉 Cool! 7 is a lucky number!");
+&#125; else &#123;
+  console.log("Nice choice!");
+&#125;</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Note ⚠️</h2>
+
+    <ul class="note-list">
+      <li>
+        <code>prompt()</code> works only in browsers (not in Node.js).
+      </li>
+      <li>
+        It blocks execution until the user enters input.
+      </li>
+    </ul>
+  </div>
+</section>

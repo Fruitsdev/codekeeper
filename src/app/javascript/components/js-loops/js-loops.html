@@ -1,0 +1,96 @@
+<section class="note-section">
+  <header class="note-header">
+    <h1 class="note-title">Loops</h1>
+    <p class="note-subtitle">
+      Loops are used to execute a block of code repeatedly until a condition is met.
+    </p>
+  </header>
+
+  <div class="note-card">
+    <h2 class="note-heading">1) for Loop</h2>
+
+    <p class="note-text">
+      Used when you know how many times you want to repeat the code.
+    </p>
+
+    <pre class="note-code"><code>for (let i = 1; i <= 5; i++) &#123;
+  console.log(i);
+&#125;</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">2) while Loop</h2>
+
+    <p class="note-text">
+      Executes the block while the condition is <strong>true</strong>.
+    </p>
+
+    <pre class="note-code"><code>let i = 1;
+
+while (i <= 5) &#123;
+  console.log(i);
+  i++;
+&#125;</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">3) do...while Loop</h2>
+
+    <p class="note-text">
+      Runs the code at least once even if the condition is false.
+    </p>
+
+    <pre class="note-code"><code>let j = 1;
+
+do &#123;
+  console.log(j);
+  j++;
+&#125; while (j <= 3);</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">4) break and continue</h2>
+
+    <ul class="note-list">
+      <li><code>break</code> → stops the loop completely</li>
+      <li><code>continue</code> → skips current iteration</li>
+    </ul>
+
+    <pre class="note-code"><code>for (let i = 1; i <= 5; i++) &#123;
+  if (i === 3) continue; // skip 3
+  if (i === 5) break;    // stop loop at 5
+  console.log(i);
+&#125;</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">5) for...of Loop</h2>
+
+    <p class="note-text">
+      Best for iterating over <strong>arrays</strong>.
+    </p>
+
+    <pre class="note-code"><code>let colors = ["red", "green", "blue"];
+
+for (let color of colors) &#123;
+  console.log(color);
+&#125;</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">6) for...in Loop</h2>
+
+    <p class="note-text">
+      Best for iterating over <strong>object keys</strong>.
+    </p>
+
+    <pre class="note-code"><code>let user = &#123;
+  name: "Tom",
+  age: 24
+&#125;;
+
+for (let key in user) &#123;
+  console.log(key, user[key]);
+&#125;</code></pre>
+  </div>
+</section>

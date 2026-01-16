@@ -1,0 +1,72 @@
+<section class="note-section">
+  <header class="note-header">
+    <h1 class="note-title">Statements &amp; Expressions</h1>
+    <p class="note-subtitle">
+      Understand the difference between expressions (produce values) and statements (perform actions).
+    </p>
+  </header>
+
+  <div class="note-card">
+    <h2 class="note-heading">Expressions ✅</h2>
+
+    <p class="note-text">
+      An <strong>expression</strong> is a piece of code that produces a value.
+    </p>
+
+    <ul class="note-list">
+      <li>Expressions can be stored in variables.</li>
+      <li>Expressions can be logged to console.</li>
+      <li>Expressions can be used inside template literals.</li>
+    </ul>
+
+    <pre class="note-code"><code>// Examples of expressions
+3 + 4
+1991
+true && false
+"Hello"
+
+// expression can be stored
+const age = 2026 - 2002;
+
+console.log(age);</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Statements ✅</h2>
+
+    <p class="note-text">
+      A <strong>statement</strong> performs an action but does not produce a value directly.
+    </p>
+
+    <pre class="note-code"><code>// if statement
+if (age >= 18) &#123;
+  console.log("Adult");
+&#125;
+
+// for loop statement
+for (let i = 1; i <= 3; i++) &#123;
+  console.log(i);
+&#125;</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Where Expressions are Used</h2>
+
+    <pre class="note-code"><code>const firstName = "Tom";
+const job = "Developer";
+const birthYear = 2002;
+
+// Expressions inside template literals
+const info = `I'm $&#123;firstName&#125;, a $&#123;job&#125;. Age: $&#123;2026 - birthYear&#125;`;
+console.log(info);</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Quick Summary</h2>
+
+    <ul class="note-list">
+      <li><strong>Expression</strong> → produces a value ✅</li>
+      <li><strong>Statement</strong> → performs an action ✅</li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,65 @@
+// ===== Common reusable styles for notes =====
+
+@mixin pageContainer() {
+  padding: 16px;
+}
+
+.note-header {
+  margin-bottom: 16px;
+}
+
+.note-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.note-subtitle {
+  margin-top: 6px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.note-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+.note-heading {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.note-text {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.note-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 16px;
+
+  li {
+    margin-bottom: 8px;
+  }
+}
+
+.note-code {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #0f172a;
+  color: #e2e8f0;
+  overflow-x: auto;
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+      "Liberation Mono", "Courier New", monospace;
+    font-size: 14px;
+  }
+}

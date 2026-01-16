@@ -1,1 +1,115 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@use './../public/styles/common.scss' as *;
+@import './../node_modules/@dev.spot/css-fusion-g/dist/cssfusion-g/css/cssfusion-g.min.css';
+
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root {
+  --navbar-bdr-full: #ececec;
+}
+
+html {
+  @include mat.theme(
+    (
+      color: (
+        primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    )
+  );
+}
+
+body {
+  color-scheme: light;
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+a,
+span,
+p,
+b,
+strong {
+  font-family: 'Outfit', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Funnel Display', sans-serif;
+}
+
+.menubar-set-01 {
+  .menubar-logo {
+    width: 48px !important;
+  }
+
+  .menubar-logo-name {
+    font-family: 'Funnel Display', sans-serif !important;
+    font-weight: 600;
+    line-height: 16px;
+    color: #cda732 !important;
+    letter-spacing: 1px;
+  }
+}
+
+.navbar-resize {
+  h3 {
+    display: none !important;
+  }
+}
+
+.note-section {
+  @include pageContainer();
+}
+
+.note-translation {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px dashed rgba(0, 0, 0, 0.15);
+}
+
+.note-subcard {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.note-subheading {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.note-card + .note-card {
+  margin-top: 14px;
+}

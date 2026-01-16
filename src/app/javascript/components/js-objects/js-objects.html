@@ -1,0 +1,113 @@
+<section class="note-section">
+  <header class="note-header">
+    <h1 class="note-title">Objects</h1>
+    <p class="note-subtitle">
+      Objects store data in <strong>key : value</strong> pairs.
+    </p>
+  </header>
+
+  <div class="note-card">
+    <h2 class="note-heading">What is an Object?</h2>
+
+    <ul class="note-list">
+      <li>Objects represent real-world entities (example: user, product, car).</li>
+      <li>Data is stored using properties (keys) and values.</li>
+      <li>Objects can store strings, numbers, booleans, arrays, functions, etc.</li>
+    </ul>
+
+    <pre class="note-code"><code>let user = &#123;
+  name: "Tom",
+  age: 24,
+  isAdmin: false
+&#125;;</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Accessing Object Properties</h2>
+
+    <ul class="note-list">
+      <li><strong>Dot notation</strong> ✅ (most common)</li>
+      <li><strong>Bracket notation</strong> ✅ (useful for dynamic keys)</li>
+    </ul>
+
+    <pre class="note-code"><code>let user = &#123;
+  name: "Tom",
+  age: 24
+&#125;;
+
+console.log(user.name);     // Tom
+console.log(user["age"]);   // 24</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Updating / Adding Properties</h2>
+
+    <pre class="note-code"><code>let user = &#123;
+  name: "Tom"
+&#125;;
+
+user.age = 24;           // add
+user.name = "Sam";       // update
+
+user["country"] = "India";
+
+console.log(user);</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Deleting Properties</h2>
+
+    <pre class="note-code"><code>let user = &#123;
+  name: "Tom",
+  age: 24
+&#125;;
+
+delete user.age;
+
+console.log(user);</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Object with Methods</h2>
+
+    <p class="note-text">
+      An object can contain functions. These are called <strong>methods</strong>.
+    </p>
+
+    <pre class="note-code"><code>let user = &#123;
+  name: "Tom",
+  greet: function () &#123;
+    console.log("Hello " + this.name);
+  &#125;
+&#125;;
+
+user.greet();</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Looping Through Object</h2>
+
+    <pre class="note-code"><code>let user = &#123;
+  name: "Tom",
+  age: 24,
+  country: "India"
+&#125;;
+
+for (let key in user) &#123;
+  console.log(key, user[key]);
+&#125;</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Object.keys / values / entries</h2>
+
+    <pre class="note-code"><code>let user = &#123;
+  name: "Tom",
+  age: 24
+&#125;;
+
+console.log(Object.keys(user));   // ["name", "age"]
+console.log(Object.values(user)); // ["Tom", 24]
+console.log(Object.entries(user));// [["name","Tom"], ["age",24]]</code></pre>
+  </div>
+</section>

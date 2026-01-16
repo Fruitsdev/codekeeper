@@ -1,0 +1,96 @@
+<section class="note-section">
+  <header class="note-header">
+    <h1 class="note-title">Truthy &amp; Falsy + Boolean Logic</h1>
+    <p class="note-subtitle">
+      Understand how JavaScript evaluates values in conditions and how logical
+      operators work.
+    </p>
+  </header>
+
+  <div class="note-card">
+    <h2 class="note-heading">Truthy &amp; Falsy</h2>
+
+    <p class="note-text">
+      In JavaScript, values are converted to <code>true</code> or
+      <code>false</code> automatically when used inside conditions.
+    </p>
+
+    <h3 class="note-subheading">Falsy values ✅</h3>
+    <ul class="note-list">
+      <li><code>false</code></li>
+      <li><code>0</code></li>
+      <li><code>""</code> (empty string)</li>
+      <li><code>null</code></li>
+      <li><code>undefined</code></li>
+      <li><code>NaN</code></li>
+    </ul>
+
+    <h3 class="note-subheading">Truthy values ✅</h3>
+    <p class="note-text">Everything else is truthy (example: <code>"0"</code>, <code>[]</code>, <code>&#123;&#125;</code>).</p>
+
+    <pre class="note-code"><code>console.log(Boolean(0));       // false
+console.log(Boolean(""));      // false
+console.log(Boolean("Hello")); // true
+console.log(Boolean([]));      // true
+console.log(Boolean(&#123;&#125;));      // true</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Truthy/Falsy in if Condition</h2>
+
+    <pre class="note-code"><code>const money = 0;
+
+if (money) &#123;
+  console.log("Don't spend it all!");
+&#125; else &#123;
+  console.log("You should get a job!"); // ✅ runs
+&#125;</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Boolean Logic (AND / OR / NOT)</h2>
+
+    <ul class="note-list">
+      <li><code>&&</code> AND → all conditions must be true</li>
+      <li><code>||</code> OR → at least one condition must be true</li>
+      <li><code>!</code> NOT → reverses boolean value</li>
+    </ul>
+
+    <pre class="note-code"><code>const hasLicense = true;
+const hasGoodVision = true;
+const isTired = false;
+
+console.log(hasLicense && hasGoodVision); // true
+console.log(hasLicense || hasGoodVision); // true
+console.log(!hasLicense);                 // false</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Example: Can Drive?</h2>
+
+    <pre class="note-code"><code>const hasLicense = true;
+const hasGoodVision = true;
+const isTired = false;
+
+if (hasLicense && hasGoodVision && !isTired) &#123;
+  console.log("✅ You can drive!");
+&#125; else &#123;
+  console.log("❌ Someone else should drive!");
+&#125;</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Short-circuiting (Bonus ✅)</h2>
+
+    <p class="note-text">
+      Logical operators don’t always return <code>true</code>/<code>false</code>.
+      They return the actual value that made the result.
+    </p>
+
+    <pre class="note-code"><code>// OR returns the first truthy value
+console.log("" || "Tom");     // "Tom"
+
+// AND returns the first falsy value
+console.log(0 && "Hello");         // 0</code></pre>
+  </div>
+</section>

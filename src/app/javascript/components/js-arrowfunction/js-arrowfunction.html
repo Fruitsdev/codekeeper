@@ -1,0 +1,203 @@
+<section class="note-section">
+  <header class="note-header">
+    <h1 class="note-title">Regular &amp; Arrow Function</h1>
+    <p class="note-subtitle">
+      Arrow functions do not have their own <code>this</code> and behave
+      differently from regular functions.
+    </p>
+  </header>
+
+  <!-- Arrow function + this -->
+  <div class="note-card">
+    <h2 class="note-heading">Arrow Function and <code>this</code></h2>
+
+    <ul class="note-list">
+      <li>
+        Arrow function does <strong>not</strong> get its own <code>this</code>.
+      </li>
+      <li>
+        It uses <code>this</code> from its surrounding scope (parent scope).
+      </li>
+      <li>
+        If arrow function is used inside an object method, parent scope could be
+        the global scope → wrong <code>this</code>.
+      </li>
+    </ul>
+
+    <pre class="note-code"><code>const jonas = &#123;
+  firstName: "Jonas",
+  year: 1991,
+  calcAge: function () &#123;
+    console.log(this);
+    console.log(2037 - this.year);
+  &#125;,
+
+  greet: () => console.log(`Hey $&#123;this.firstName&#125;`)
+&#125;;
+
+jonas.greet();</code></pre>
+
+    <p class="note-text">
+      ✅ This is an <strong>object literal</strong> (a way of defining objects directly).
+    </p>
+  </div>
+
+  <!-- Never use arrow function as method -->
+  <div class="note-card">
+    <h2 class="note-heading">❌ Never use an Arrow Function as a Method</h2>
+
+    <pre class="note-code"><code>// Never use a arrow function as a method
+var firstName = "Matilda";
+
+const jonas = &#123;
+  firstName: "Jonas",
+  year: 1991,
+  calcAge: function () &#123;
+    console.log(this);
+    console.log(2037 - this.year);
+  &#125;,
+
+  greet: () => console.log(`Hey $&#123;this.firstName&#125;`)
+&#125;;
+
+jonas.greet();</code></pre>
+
+    <p class="note-text">
+      The arrow function does not bind <code>this</code> to the object.
+      It tries to use global <code>this</code> (so it can print wrong name).
+    </p>
+  </div>
+
+  <!-- Correct method -->
+  <div class="note-card">
+    <h2 class="note-heading">✅ Correct Way (Regular Method)</h2>
+
+    <pre class="note-code"><code>var firstName = "Matilda";
+
+const jonas = &#123;
+  firstName: "Jonas",
+  year: 1991,
+  calcAge: function () &#123;
+    console.log(this);
+    console.log(2037 - this.year);
+  &#125;,
+
+  greet: function () &#123;
+    console.log(`Hey $&#123;this.firstName&#125;`);
+  &#125;
+&#125;;
+
+jonas.greet();</code></pre>
+  </div>
+
+  <!-- Function inside a method problem -->
+  <div class="note-card">
+    <h2 class="note-heading">Function inside a Method (Problem)</h2>
+
+    <p class="note-text">
+      Inside a regular function call, <code>this</code> becomes
+      <code>undefined</code> in strict mode.
+    </p>
+
+    <pre class="note-code"><code>const jonas = &#123;
+  firstName: "Jonas",
+  year: 1991,
+  calcAge: function () &#123;
+    console.log(this);
+    console.log(2037 - this.year);
+
+    const isMillennial = function () &#123;
+      // here this is undefined in strict mode
+      console.log(this.year >= 1981 && this.year <= 1996);
+    &#125;;
+
+    isMillennial();
+  &#125;
+&#125;;
+
+jonas.calcAge();
+
+// Output: Cannot read property 'year' of undefined</code></pre>
+  </div>
+
+  <!-- Fix before ES6 -->
+  <div class="note-card">
+    <h2 class="note-heading">Fix 1: Before ES6 (self = this)</h2>
+
+    <pre class="note-code"><code>const jonas = &#123;
+  firstName: "Jonas",
+  year: 1991,
+  calcAge: function () &#123;
+    console.log(this);
+    console.log(2037 - this.year);
+
+    const self = this; // ✅ store this in a variable
+
+    const isMillennial = function () &#123;
+      console.log(self.year >= 1981 && self.year <= 1996);
+    &#125;;
+
+    isMillennial();
+  &#125;
+&#125;;
+
+jonas.calcAge();
+
+// Output: true</code></pre>
+  </div>
+
+  <!-- Fix using arrow function -->
+  <div class="note-card">
+    <h2 class="note-heading">Fix 2: ES6 (Arrow Function)</h2>
+
+    <p class="note-text">
+      Arrow function inherits <code>this</code> from parent scope (method scope),
+      so it works properly.
+    </p>
+
+    <pre class="note-code"><code>const jonas = &#123;
+  firstName: "Jonas",
+  year: 1991,
+  calcAge: function () &#123;
+    console.log(this);
+    console.log(2037 - this.year);
+
+    const isMillennial = () => &#123;
+      console.log(this.year >= 1981 && this.year <= 1996);
+    &#125;;
+
+    isMillennial();
+  &#125;
+&#125;;
+
+jonas.calcAge();
+
+// Output: true</code></pre>
+  </div>
+
+  <!-- Arguments keyword -->
+  <div class="note-card">
+    <h2 class="note-heading">Arguments Keyword</h2>
+
+    <ul class="note-list">
+      <li>
+        The <code>arguments</code> keyword is only available in
+        <strong>regular functions</strong>.
+      </li>
+      <li>
+        It helps when a function receives more arguments than defined parameters.
+      </li>
+    </ul>
+
+    <pre class="note-code"><code>const addExpr = function (a, b) &#123;
+  console.log(arguments);
+  return a + b;
+&#125;;
+
+addExpr(2, 5);
+addExpr(2, 5, 3, 4);
+
+// Output: arguments(2) [2, 5]
+// Output: arguments(4) [2, 5, 3, 4]</code></pre>
+  </div>
+</section>

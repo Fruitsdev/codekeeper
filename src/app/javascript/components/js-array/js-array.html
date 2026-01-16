@@ -1,0 +1,112 @@
+<section class="note-section">
+  <header class="note-header">
+    <h1 class="note-title">Arrays</h1>
+    <p class="note-subtitle">
+      Arrays are used to store multiple values in a single variable.
+    </p>
+  </header>
+
+  <div class="note-card">
+    <h2 class="note-heading">What is an Array?</h2>
+
+    <ul class="note-list">
+      <li>An array holds a collection of values.</li>
+      <li>Array values are stored in index positions (starting from <code>0</code>).</li>
+      <li>Arrays can store different data types together.</li>
+    </ul>
+
+    <pre class="note-code"><code>let numbers = [10, 20, 30];
+let mixed = ["Tom", 24, true];</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Accessing Array Elements</h2>
+
+    <pre class="note-code"><code>let fruits = ["Apple", "Banana", "Mango"];
+
+console.log(fruits[0]); // Apple
+console.log(fruits[2]); // Mango</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Updating Array Elements</h2>
+
+    <pre class="note-code"><code>let fruits = ["Apple", "Banana", "Mango"];
+
+fruits[1] = "Orange";
+console.log(fruits); // ["Apple", "Orange", "Mango"]</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Array Length</h2>
+
+    <pre class="note-code"><code>let fruits = ["Apple", "Banana", "Mango"];
+
+console.log(fruits.length); // 3</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Common Array Methods</h2>
+
+    <ul class="note-list">
+      <li><code>push()</code> → adds item at end</li>
+      <li><code>pop()</code> → removes last item</li>
+      <li><code>unshift()</code> → adds item at start</li>
+      <li><code>shift()</code> → removes first item</li>
+      <li><code>includes()</code> → checks if value exists</li>
+      <li><code>indexOf()</code> → returns index of value</li>
+    </ul>
+
+    <pre class="note-code"><code>let fruits = ["Apple", "Banana"];
+
+fruits.push("Mango");     // ["Apple","Banana","Mango"]
+fruits.pop();             // ["Apple","Banana"]
+
+fruits.unshift("Orange"); // ["Orange","Apple","Banana"]
+fruits.shift();           // ["Apple","Banana"]
+
+console.log(fruits.includes("Banana")); // true
+console.log(fruits.indexOf("Apple"));   // 0</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Looping Through Arrays</h2>
+
+    <pre class="note-code"><code>let nums = [10, 20, 30];
+
+// for loop
+for (let i = 0; i &lt;  nums.length; i++) &#123;
+  console.log(nums[i]);
+&#125;
+
+// for...of loop
+for (let num of nums) &#123;
+  console.log(num);
+&#125;</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Important Array Methods (ES6+)</h2>
+
+    <ul class="note-list">
+      <li><code>map()</code> → transforms array</li>
+      <li><code>filter()</code> → filters based on condition</li>
+      <li><code>reduce()</code> → reduces to single value</li>
+      <li><code>find()</code> → returns first matching element</li>
+    </ul>
+
+    <pre class="note-code"><code>let numbers = [1, 2, 3, 4, 5];
+
+let doubled = numbers.map((n) => n * 2);
+console.log(doubled); // [2,4,6,8,10]
+
+let even = numbers.filter((n) => n % 2 === 0);
+console.log(even); // [2,4]
+
+let sum = numbers.reduce((acc, n) => acc + n, 0);
+console.log(sum); // 15
+
+let firstBig = numbers.find((n) => n > 3);
+console.log(firstBig); // 4</code></pre>
+  </div>
+</section>

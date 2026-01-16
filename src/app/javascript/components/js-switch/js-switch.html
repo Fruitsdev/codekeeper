@@ -1,0 +1,82 @@
+<section class="note-section">
+  <header class="note-header">
+    <h1 class="note-title">Switch Case</h1>
+    <p class="note-subtitle">
+      <code>switch</code> is used to compare a value against multiple cases.
+    </p>
+  </header>
+
+  <div class="note-card">
+    <h2 class="note-heading">Basic switch Example</h2>
+
+    <pre class="note-code"><code>const day = "monday";
+
+switch (day) &#123;
+  case "monday":
+    console.log("Plan course structure");
+    console.log("Go to coding meetup");
+    break;
+
+  case "tuesday":
+    console.log("Prepare theory videos");
+    break;
+
+  case "wednesday":
+  case "thursday":
+    console.log("Write code examples");
+    break;
+
+  case "friday":
+    console.log("Record videos");
+    break;
+
+  case "saturday":
+  case "sunday":
+    console.log("Enjoy the weekend 😄");
+    break;
+
+  default:
+    console.log("Not a valid day!");
+&#125;</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Why break is important?</h2>
+
+    <p class="note-text">
+      Without <code>break</code>, the execution continues into the next case
+      (this is called <strong>fall-through</strong>).
+    </p>
+
+    <pre class="note-code"><code>const num = 1;
+
+switch (num) &#123;
+  case 1:
+    console.log("One");
+    // no break → continues
+  case 2:
+    console.log("Two");
+    break;
+  default:
+    console.log("Unknown");
+&#125;
+
+// Output:
+// One
+// Two</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">switch vs if...else</h2>
+
+    <ul class="note-list">
+      <li>
+        Use <code>switch</code> when comparing the <strong>same variable</strong>
+        with many exact values.
+      </li>
+      <li>
+        Use <code>if...else</code> when conditions involve ranges or complex logic.
+      </li>
+    </ul>
+  </div>
+</section>

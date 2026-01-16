@@ -1,0 +1,62 @@
+<section class="note-section">
+  <header class="note-header">
+    <h1 class="note-title">Equality Operator</h1>
+    <p class="note-subtitle">
+      JavaScript has loose and strict equality operators.
+    </p>
+  </header>
+
+  <div class="note-card">
+    <h2 class="note-heading">Loose Equality (==)</h2>
+
+    <ul class="note-list">
+      <li>
+        <code>==</code> compares only the <strong>value</strong>
+      </li>
+      <li>
+        It performs <strong>type coercion</strong> automatically ⚠️
+      </li>
+    </ul>
+
+    <pre class="note-code"><code>console.log(5 == "5");     // true  ✅ (string "5" becomes number 5)
+console.log(true == 1);    // true
+console.log(false == 0);   // true</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Strict Equality (===) ✅ Recommended</h2>
+
+    <ul class="note-list">
+      <li>
+        <code>===</code> compares both <strong>value + type</strong>
+      </li>
+      <li>
+        No type coercion happens ✅
+      </li>
+    </ul>
+
+    <pre class="note-code"><code>console.log(5 === "5");    // false ✅ different types
+console.log(true === 1);   // false
+console.log(false === 0);  // false</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Not Equal Operators (!= vs !==)</h2>
+
+    <pre class="note-code"><code>console.log(5 != "5");     // false (because "5" coerces to 5)
+console.log(5 !== "5");    // true  ✅ strict check</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Best Practice ✅</h2>
+
+    <ul class="note-list">
+      <li>
+        Always prefer <code>===</code> and <code>!==</code> for clean and predictable code.
+      </li>
+      <li>
+        Avoid <code>==</code> unless you intentionally want coercion.
+      </li>
+    </ul>
+  </div>
+</section>

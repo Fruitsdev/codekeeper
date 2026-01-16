@@ -1,0 +1,77 @@
+<section class="note-section">
+  <header class="note-header">
+    <h1 class="note-title">If else</h1>
+    <p class="note-subtitle">
+      <code>if</code>, <code>else if</code>, and <code>else</code> are used to
+      execute code based on conditions.
+    </p>
+  </header>
+
+  <div class="note-card">
+    <h2 class="note-heading">1) Simple if</h2>
+
+    <pre class="note-code"><code>const age = 19;
+
+if (age >= 18) &#123;
+  console.log("✅ You are an adult");
+&#125;</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">2) if...else</h2>
+
+    <pre class="note-code"><code>const age = 15;
+
+if (age >= 18) &#123;
+  console.log("✅ You can vote");
+&#125; else &#123;
+  console.log("❌ You cannot vote");
+&#125;</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">3) else if Ladder</h2>
+
+    <pre class="note-code"><code>const marks = 82;
+
+if (marks >= 90) &#123;
+  console.log("Grade A");
+&#125; else if (marks >= 75) &#123;
+  console.log("Grade B");
+&#125; else if (marks >= 50) &#123;
+  console.log("Grade C");
+&#125; else &#123;
+  console.log("Fail");
+&#125;</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">4) Multiple Conditions</h2>
+
+    <pre class="note-code"><code>const hasId = true;
+const age = 20;
+
+if (age >= 18 && hasId) &#123;
+  console.log("✅ Entry allowed");
+&#125; else &#123;
+  console.log("❌ Entry not allowed");
+&#125;</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">5) Nested if (Example)</h2>
+
+    <pre class="note-code"><code>const isLoggedIn = true;
+const role = "admin";
+
+if (isLoggedIn) &#123;
+  if (role === "admin") &#123;
+    console.log("✅ Welcome Admin");
+  &#125; else &#123;
+    console.log("✅ Welcome User");
+  &#125;
+&#125; else &#123;
+  console.log("❌ Please login");
+&#125;</code></pre>
+  </div>
+</section>

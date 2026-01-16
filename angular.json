@@ -33,8 +33,9 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.scss"
+            "styles": ["src/styles.scss"],
+            "scripts": [
+              "node_modules/@dev.spot/css-fusion-g/dist/cssfusion-g/js/cssfusion-g.umd.js"
             ]
           },
           "configurations": {
@@ -87,9 +88,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.scss"
-            ]
+            "styles": ["src/styles.scss"]
           }
         }
       }

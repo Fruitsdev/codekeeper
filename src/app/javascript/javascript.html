@@ -1,0 +1,41 @@
+<section class="app-body">
+  <nav class="navbar-box" cssFusionNav>
+    <div class="navbar-set01">
+      <h3>Javascript</h3>
+      <span class="material-symbols-outlined nav-icon-trigger" id="navLeft-tigger">
+        keyboard_double_arrow_left
+      </span>
+    </div>
+
+    <div class="navbar-set02">
+      <ng-container *ngFor="let group of navGroups">
+        <small class="nav-menu">{{ group.groupTitle }}</small>
+        <p
+          class="navbar-link"
+          *ngFor="let item of group.items"
+          [routerLink]="[item.path]"
+          routerLinkActive="navbar-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <span class="material-symbols-outlined nav-icon">{{ item.icon }}</span>
+          <span class="nav-txt">{{ item.title }}</span>
+        </p>
+      </ng-container>
+    </div>
+
+    <div class="navbar-set03">
+      <div class="user">
+        <span class="material-symbols-outlined user-img">account_circle</span>
+        <div class="user-info nav-txt">
+          <h3 class="user-info-name">User Name</h3>
+          <p class="user-info-desc">Ui/Ux Developer</p>
+        </div>
+      </div>
+      <span class="material-symbols-outlined more-icon"> steppers </span>
+    </div>
+  </nav>
+
+  <div class="app-content">
+    <router-outlet></router-outlet>
+  </div>
+</section>

@@ -1,0 +1,115 @@
+<section class="note-section">
+  <header class="note-header">
+    <h1 class="note-title">Operators</h1>
+    <p class="note-subtitle">
+      Operators are symbols used to perform operations on values and variables.
+    </p>
+  </header>
+
+  <div class="note-card">
+    <h2 class="note-heading">1) Arithmetic Operators</h2>
+
+    <ul class="note-list">
+      <li><code>+</code> Addition</li>
+      <li><code>-</code> Subtraction</li>
+      <li><code>*</code> Multiplication</li>
+      <li><code>/</code> Division</li>
+      <li><code>%</code> Modulus (Remainder)</li>
+      <li><code>**</code> Exponentiation</li>
+      <li><code>++</code> Increment</li>
+      <li><code>--</code> Decrement</li>
+    </ul>
+
+    <pre class="note-code"><code>let a = 10;
+let b = 3;
+
+console.log(a + b);  // 13
+console.log(a - b);  // 7
+console.log(a * b);  // 30
+console.log(a / b);  // 3.333...
+console.log(a % b);  // 1
+console.log(a ** b); // 1000
+
+a++;
+b--;</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">2) Assignment Operators</h2>
+
+    <ul class="note-list">
+      <li><code>=</code> Assign</li>
+      <li><code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code> Update and assign</li>
+    </ul>
+
+    <pre class="note-code"><code>let x = 10;
+
+x += 5;  // x = 15
+x -= 2;  // x = 13
+x *= 2;  // x = 26
+x /= 2;  // x = 13</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">3) Comparison Operators</h2>
+
+    <ul class="note-list">
+      <li><code>==</code> Equal (checks value only)</li>
+      <li><code>===</code> Strict equal (checks value + type) ✅</li>
+      <li><code>!=</code> Not equal</li>
+      <li><code>!==</code> Strict not equal ✅</li>
+      <li><code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code></li>
+    </ul>
+
+    <pre class="note-code"><code>console.log(5 == "5");   // true  ✅ value only
+console.log(5 === "5");  // false ✅ type mismatch
+
+console.log(10 > 5);     // true
+console.log(10 <= 9);    // false</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">4) Logical Operators</h2>
+
+    <ul class="note-list">
+      <li><code>&&</code> AND</li>
+      <li><code>||</code> OR</li>
+      <li><code>!</code> NOT</li>
+    </ul>
+
+    <pre class="note-code"><code>let age = 20;
+let hasId = true;
+
+console.log(age >= 18 && hasId); // true
+
+console.log(age < 18 || hasId);  // true
+
+console.log(!hasId); // false</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">5) Ternary Operator</h2>
+
+    <p class="note-text">
+      A short way to write an <code>if...else</code>.
+    </p>
+
+    <pre class="note-code"><code>let marks = 45;
+
+let result = marks >= 40 ? "Pass" : "Fail";
+console.log(result);</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">6) String Operators</h2>
+
+    <p class="note-text">
+      You can use <code>+</code> to concatenate strings.
+    </p>
+
+    <pre class="note-code"><code>let firstName = "Tom";
+let lastName = "G";
+
+console.log(firstName + " " + lastName); // Tom G</code></pre>
+  </div>
+</section>

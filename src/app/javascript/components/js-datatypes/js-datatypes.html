@@ -1,0 +1,82 @@
+<section class="note-section">
+  <header class="note-header">
+    <h1 class="note-title">Data Types</h1>
+    <p class="note-subtitle">
+      Data types define what kind of value a variable can hold in JavaScript.
+    </p>
+  </header>
+
+  <div class="note-card">
+    <h2 class="note-heading">Two Main Categories</h2>
+
+    <ul class="note-list">
+      <li>
+        <strong>Primitive Data Types</strong> → Stores single value (immutable)
+      </li>
+      <li>
+        <strong>Non-Primitive / Reference Types</strong> → Stores complex data
+        structures (mutable)
+      </li>
+    </ul>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Primitive Data Types</h2>
+
+    <ul class="note-list">
+      <li><code>String</code> → Text values</li>
+      <li><code>Number</code> → Numbers (integer & decimal)</li>
+      <li><code>Boolean</code> → true / false</li>
+      <li><code>Undefined</code> → Variable declared but not assigned</li>
+      <li><code>Null</code> → Intentional empty value</li>
+      <li><code>BigInt</code> → Large integers</li>
+      <li><code>Symbol</code> → Unique identifiers</li>
+    </ul>
+
+    <pre class="note-code"><code>let userName = "Tom";   // String
+let age = 24;                // Number
+let isAdmin = false;         // Boolean
+
+let city;                    // Undefined
+let address = null;          // Null
+
+let bigNumber = 12345678901234567890n; // BigInt</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">Non-Primitive (Reference) Types</h2>
+
+    <ul class="note-list">
+      <li><code>Object</code></li>
+      <li><code>Array</code></li>
+      <li><code>Function</code></li>
+    </ul>
+
+    <pre class="note-code"><code>let person = &#123;
+  name: "Tom",
+  age: 24
+&#125;;
+
+let numbers = [10, 20, 30];
+
+function greet() &#123;
+  console.log("Hello!");
+&#125;</code></pre>
+  </div>
+
+  <div class="note-card">
+    <h2 class="note-heading">typeof Operator</h2>
+
+    <p class="note-text">
+      JavaScript provides the <code>typeof</code> operator to check the data
+      type of a value.
+    </p>
+
+    <pre class="note-code"><code>console.log(typeof "Hello");   // "string"
+console.log(typeof 10);        // "number"
+console.log(typeof true);      // "boolean"
+console.log(typeof undefined); // "undefined"
+
+console.log(typeof null);      // "object" ✅ (this is a known JS bug)</code></pre>
+  </div>
+</section>
