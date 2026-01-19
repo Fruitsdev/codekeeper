@@ -26,15 +26,17 @@
 
       <li>
         <strong>Import the required module</strong>
-        <pre class="note-code"><code>import &#123; Component &#125; from '&#64;angular/core';</code></pre>
+        <pre
+          class="note-code"
+        ><code>import &#123; Component &#125; from '&#64;angular/core';</code></pre>
       </li>
 
       <li>
         <strong>Use the <code>&#64;Component</code> decorator</strong>
         <ul class="note-list">
           <li>
-            This decorator provides metadata for the component, such as its
-            selector, template, and styles.
+            This decorator provides metadata for the component, such as its selector, template, and
+            styles.
           </li>
         </ul>
       </li>
@@ -43,17 +45,14 @@
         <strong>Define a selector</strong>
         <ul class="note-list">
           <li>
-            The selector tells Angular which elements on the screen should be
-            controlled or replaced by our custom component.
+            The selector tells Angular which elements on the screen should be controlled or replaced
+            by our custom component.
           </li>
           <li>
-            The convention is to use at least two words separated by a dash
-            (Example: <code>app-header</code>).
+            The convention is to use at least two words separated by a dash (Example:
+            <code>app-header</code>).
           </li>
-          <li>
-            Using a single-word selector may conflict with built-in HTML
-            elements.
-          </li>
+          <li>Using a single-word selector may conflict with built-in HTML elements.</li>
         </ul>
       </li>
 
@@ -62,18 +61,226 @@
         <ul class="note-list">
           <li>The template defines the HTML structure of the component.</li>
           <li>We can define it using:</li>
-          <li>
-            A string (inline template) where we write HTML directly.
-          </li>
-          <li>
-            A separate file using <code>templateUrl</code>, where we provide the
-            file path.
-          </li>
+          <li>A string (inline template) where we write HTML directly.</li>
+          <li>A separate file using <code>templateUrl</code>, where we provide the file path.</li>
         </ul>
       </li>
 
       <li>
         <strong>Set the standalone property</strong>
+        <ul class="note-list">
+          <li>Depending on the Angular version:</li>
+          <li>Angular 19+: The standalone property is automatically set to true.</li>
+          <li>Earlier versions: You must manually set standalone: true.</li>
+          <li>For module-based components, set it to false.</li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>Import the component into app.component.ts</strong>
+        <ul class="note-list">
+          <li>
+            To use the HeaderComponent, import it in app.component.ts and include it in the
+            template.
+          </li>
+          <pre class="note-code">
+                 <code>
+                  import &#123; Component &#125; from '&#64;angular/core';
+                  import &#123; HeaderComponent &#125; from './header.component';
+
+                  &#64;Component(&#123;
+                  selector: 'app-root',
+                  standalone: true,
+                  imports: [HeaderComponent],
+                  templateUrl: './app.component.html',
+                  styleUrls: ['./app.component.css']
+                  &#125;)
+                </code>
+               </pre>
+        </ul>
+      </li>
+
+      <li>
+        <strong>Some Angular Features</strong>
+        <ul class="note-list">
+          <li>
+            Inside a component we can create variables and assign a value to it without using var,
+            let and const keywords
+          </li>
+          <li>We a create regular variable outside the class and do regular javascript there</li>
+          <pre class="note-code">
+          <code>
+            import &#123; Component &#125; from '&#64;angular/core';
+            import &#123; DUMMY_USERS &#125; from '../../dummy-users';
+
+            const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
+
+            &#64;Component(&#123;
+            selector: 'app-user',
+            standalone: true,
+            templateUrl: './user.component.html',
+            styleUrl: './user.component.css',
+            &#125;)
+            export class UserComponent &#123;
+           selectedUser = DUMMY_USERS[randomIndex];
+           &#125;
+       </code>
+     </pre>
+          <li>We can also import a normal .ts file and use there values in our component</li>
+          <pre class="note-code">
+    <code>
+      export const DUMMY_USERS = [
+        &#123;
+         id: 'u1',
+         name: 'Jasmine Washington',
+         avatar: 'user-1.jpg',
+       &#125;,
+       &#123;
+         id: 'u2',
+         name: 'Emily Thompson',
+         avatar: 'user-2.jpg',
+      &#125;,
+     ];
+  </code>
+   </pre>
+          <li>
+            String interpolation – Display dynamic content. If we add
+            <strong>private</strong> before the property, we can access it only inside the class. If
+            we do not add <strong>public</strong>, it will be <strong>public by default</strong>. We
+            can use other JavaScript expressions inside the interpolation <span>&#123;</span
+            ><span>&#123;</span> <span>&#125;</span><span>&#125;</span>
+          </li>
+
+          <pre class="note-code">
+  <code>
+    export class UserComponent &#123;
+     private selectedUser = DUMMY_USERS[randomIndex];
+  &#125;
+  </code>
+</pre>
+          <pre class="note-code">
+<code>
+&lt;p&gt;<span>&#123;</span><span>&#123;</span> selectedUser.name <span>&#125;</span><span>&#125;</span>&lt;/p&gt;
+</code>
+</pre>
+
+          <li>
+            Property Binding - Dynamic usage of html attribute. We can concatenate the src to get
+            dynamic path
+          </li>
+          <pre class="note-code">
+<code>
+&lt;img [src]="<span>&#123;</span><span>&#123;</span> selectedUser.avatar <span>&#125;</span><span>&#125;</span>" alt="user-image" /&gt;
+</code>
+</pre>
+        </ul>
+      </li>
+
+      <li>
+        <strong>Attribute Binding</strong>
+        <ul class="note-list">
+          <li>
+            In Property Binding, Angular binds values to DOM properties, not attributes. For
+            example:
+          </li>
+          <pre class="note-code">
+<code>
+&lt;img [src]="someSrc"&gt;
+</code>
+</pre>
+          <li>Here, src is bound to the DOM property, not the HTML attribute.</li>
+          <li>
+            However, some attributes (like ARIA attributes) don’t have matching DOM properties. In
+            such cases, Attribute Binding is used:
+          </li>
+          <pre class="note-code">
+<code>
+&lt;div 
+  role="progressbar" 
+  [attr.aria-valuenow]="currentVal" 
+  [attr.aria-valuemax]="maxVal"&gt;
+&lt;/div&gt;
+</code>
+</pre>
+          <li>
+            Adding attr. before an attribute tells Angular to bind the **HTML attribute instead of a
+            property. This is useful for ARIA, colspan, tabindex, and other attributes without
+            corresponding properties.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>Typescript and Javascript features in classes [get]</strong>
+        <ul class="note-list">
+          <li>
+            This is useful for dynamically displaying user profile images without hardcoding file
+            paths.
+          </li>
+          <pre class="note-code">
+<code>
+get imagePath() &#123;
+  return './assets/users/' + this.selectedUser.avatar;
+&#125;
+</code>
+</pre>
+
+          <pre class="note-code">
+<code>
+&lt;div&gt;
+  &lt;button&gt;
+    &lt;img [src]="imagePath" [alt]="selectedUser.name" /&gt;
+    &lt;span&gt;
+      <span>&#123;</span><span>&#123;</span> selectedUser.name <span>&#125;</span><span>&#125;</span>
+    &lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+</code>
+</pre>
+          <li>Zone.js notifies Angular about user events, expired timers etc.</li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>Signals</strong>
+        <ul class="note-list">
+          <li>
+            A Signal is an object that stores a value (any type of value, including nested objects)
+            There are two approaches for update state
+          </li>
+          <strong>Option 01:</strong>
+          <li>Relying on Zone.js & Angular’s changes detection mechanism</li>
+          <li>Works automatically, no special instruction mechanism</li>
+          <li>Supports since Angular 2</li>
+          <strong>Option 02:</strong>
+          <li>Using Signals to notify angular about value changes & required Ui updates</li>
+          <li>Requires usage & special “signal” instruction & code</li>
+          <li>Supported since angular 16</li>
+          <strong>How to use Signals</strong>
+          <pre class="note-code">
+<code>
+import &#123; Component, signal &#125; from '&#64;angular/core';
+</code>
+</pre>
+          <li>We need to call the signal to access the property inside it</li>
+          <pre class="note-code">
+<code>
+selectedUser = signal(DUMMY_USERS[randomIndex]);
+
+imagePath = computed(() =&gt; './assets/users/' + this.selectedUser().avatar);
+
+get imagePath() &#123;
+  return './assets/users/' + this.selectedUser().avatar;
+&#125;
+
+onSelectUser() &#123;
+  const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
+  this.selectedUser = signal(DUMMY_USERS[randomIndex]);
+&#125;
+</code>
+</pre>
+
+        </ul>
       </li>
     </ol>
 
